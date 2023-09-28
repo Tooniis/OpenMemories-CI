@@ -17,7 +17,7 @@ jobs:
         sudo apt-get install libjpeg-dev libmad0-dev
         git clone --depth=1 https://github.com/ma1co/qemu.git qemu
         cd qemu
-        ./configure --target-list=arm-softmmu --disable-docs --disable-tools --disable-user
+        ./configure --target-list=arm-softmmu --disable-docs --disable-tools --disable-user --disable-werror
         make -j $(nproc)
         echo "$PWD/arm-softmmu" >> $GITHUB_PATH
     - name: Install fwtool
